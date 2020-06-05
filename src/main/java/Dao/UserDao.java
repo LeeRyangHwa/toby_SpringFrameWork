@@ -42,14 +42,17 @@ public class UserDao {
 //
 //        return user;
 //    }
-    private SimpleConnectionMaker simpleConnectionMaker;
-    public UserDao(){
-        simpleConnectionMaker = new SimpleConnectionMaker();
+//    private SimpleConnectionMaker simpleConnectionMaker;
+    private ConnectionMaker connectionMaker;
+    public UserDao(ConnectionMaker connectinoMaker){
+//        simpleConnectionMaker = new SimpleConnectionMaker();
+//        connectionMaker = new DConnectionMaker();
+        this.connectionMaker = connectinoMaker;
     }
     //중복 코드의 메서드 추출
     public void add(User user) throws ClassNotFoundException, SQLException{
 //        Connection c = getConnection();
-        Connection c = simpleConnectionMaker.makeNewConnection();
+        Connection c = connectionMaker.makeConnection();
         PreparedStatement ps = c.prepareStatement("insert  into users(id,name, password) valuse(?,?,?)");
         ps.setString(1, user.getId());
         ps.setString(1, user.getName());
@@ -61,7 +64,7 @@ public class UserDao {
     }
     public User get(String id) throws ClassNotFoundException, SQLException{
 //        Connection c  = getConnection();
-        Connection c = simpleConnectionMaker.makeNewConnection();
+        Connection c = connectionMaker.makeConnection();
         PreparedStatement ps = c.prepareStatement("select * from users where id = ?");
         ps.setString(1, id);
 
