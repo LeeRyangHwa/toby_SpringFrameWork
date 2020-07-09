@@ -1,6 +1,6 @@
-package Dao;
+package com.pro.Dao;
 
-import Dto.User;
+import com.pro.Dto.User;
 
 import java.sql.*;
 

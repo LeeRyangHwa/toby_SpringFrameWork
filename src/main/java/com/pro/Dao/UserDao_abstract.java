@@ -1,8 +1,11 @@
-package Dao;
+package com.pro.Dao;
 
-import Dto.User;
+import com.pro.Dto.User;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public abstract class UserDao_abstract {
     public void add(User user) throws ClassNotFoundException, SQLException {

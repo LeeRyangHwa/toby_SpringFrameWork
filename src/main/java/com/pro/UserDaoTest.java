@@ -1,9 +1,9 @@
-package com.pro.controller;
+package com.pro;
 
-import Dao.ConnectionMaker;
-import Dao.DConnectionMaker;
-import Dao.UserDao;
-import Factory.DaoFactory;
+import com.pro.Dao.ConnectionMaker;
+import com.pro.Dao.DConnectionMaker;
+import com.pro.Dao.UserDao;
+import com.pro.Factory.DaoFactory;
 
 import java.sql.SQLException;
 
@@ -13,6 +13,7 @@ public class UserDaoTest {
         UserDao dao = new UserDao(connectionMaker);
         UserDao dao1 = new DaoFactory().userDao();// dao와 같은 일을 한다.
 
+        System.out.println("!!");
 
 
     }

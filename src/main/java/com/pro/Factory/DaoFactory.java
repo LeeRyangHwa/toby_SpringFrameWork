@@ -1,8 +1,8 @@
-package Factory;
+package com.pro.Factory;
 
-import Dao.ConnectionMaker;
-import Dao.DConnectionMaker;
-import Dao.UserDao;
+import com.pro.Dao.ConnectionMaker;
+import com.pro.Dao.DConnectionMaker;
+import com.pro.Dao.UserDao;
 
 public class DaoFactory {
     public UserDao userDao(){
